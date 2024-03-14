@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, redirect
 from os import urandom
 
 app = Flask(__name__)
@@ -14,9 +14,9 @@ def home():
 @app.route("/login")
 def login():
     session['username'] = "Bob"
-    return "Bob Logged In!"
+    return redirect("/")
 
 @app.route("/logout")
 def logout():
     session.pop('username', None)
-    return "User Logged Out"
+    return redirect("/")
