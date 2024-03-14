@@ -1,5 +1,8 @@
 {% if user == "None" %}
-<a href="/login">Login</a>
+  <a href="/login">Login</a>
+
 {% else %}
-Hello {{ user }}
+  Hello {{ user }} <p>
+  <a href="/logout">Logout</a>
+
 {% endif %}
